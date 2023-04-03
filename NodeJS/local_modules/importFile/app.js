@@ -3,3 +3,7 @@ const products = require('./data/products.json'); // if the extension is .js, it
 // This copying is not an import of module >> it's a copy of the file content
 // There's an additional step to import a module >> export the module first using module.exports
 // Module has to be of extension .js
+
+const dbConfig = require('./config/database');
+
+console.log("Database config: ", dbConfig.host);
