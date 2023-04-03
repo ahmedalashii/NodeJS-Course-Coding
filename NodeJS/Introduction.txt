@@ -34,7 +34,7 @@
                      Example of ES6: let, const, arrow functions, classes, etc.
    2- CommonJS Module >> CommonJS Module: It's specalized for importing and exporting modules in JavaScript.
    3- V8 Engine (Sync execution) (Single-Thread => V8 Call Stack) >> It's a JavaScript engine that is used in Google Chrome and in Node.js (Code execution Manager => Runner).
-   4- Libuv (Async execution =>> Async handler >> Multi-thread) >> It's a cross-platform asynchronous I/O library.
+   4- Libuv (Async execution =>> Async handler >> Multi-thread) >> It's a cross-platform asynchronous I/O library. It usually came with 4 threads.
    5- NPM (Node Package Manager) >> It's a package manager for the JavaScript programming language. >> Dependency manager like Composer in PHP.
 
 
