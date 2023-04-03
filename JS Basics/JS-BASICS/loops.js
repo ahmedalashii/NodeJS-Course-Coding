@@ -10,10 +10,8 @@
     * 5- do/while - also loops through a block of code while a specified condition is true
     * 6- break - breaks out of the loop and continues executing the code after the loop (if any)
     * 7- continue - breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop
-    * 8- for await of - loops through an async iterable object
-    * 9- for await in - loops through the properties of an async iterable object
-    * 10- for each - loops through the values of an iterable object
-    * 11- for each in - loops through the properties of an object
+    * 8- for each - loops through the values of an iterable object
+    * 9- for each in - loops through the properties of an object
 */
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

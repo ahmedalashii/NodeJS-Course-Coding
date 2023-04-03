@@ -18,7 +18,7 @@ hash1();
 hash1();
 setImmediate(() => { // setImmediate() is a special function that runs a callback at the end of the current loop or on the next loop iteration, after I/O events.
     console.log('Immediate:', Date.now() - start);
-});
+}, 'Immediate');
 process.nextTick(() => { // is similar, but it runs the callback before any I/O events (the highest priority).
     console.log('Next Tick:', Date.now() - start);
 });

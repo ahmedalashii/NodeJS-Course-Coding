@@ -24,7 +24,7 @@ const productName = 'Coffee Star';
 // });
 
 
-// The code above portays the normal (first) way of handling async operations .. 
+// The code above represents the normal (first) way of handling async operations .. 
 // So now instead of using callbacks >> We're going to use the 2nd way of handling async operations "Promise"
 // Promise is like Future in dart >> It's like an agreement (وعد) between the sync process and the async process.
 // So that when the async process finished its work >> it (async) will return a result ..

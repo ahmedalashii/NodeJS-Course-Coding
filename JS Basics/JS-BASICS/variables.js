@@ -11,7 +11,7 @@ let lastName = "Alashi";
 
 //~ You can also declare variables using the const keyword
 const age = 22; // You cannot reassign a value to a const variable
-//!The difference between let and const is that let can be reassigned and const cannot be reassigned
+//! The difference between let and const is that let can be reassigned and const cannot be reassigned
 // age = 23; // TypeError: Assignment to constant variable.
 //~ You can also declare variables using the var keyword without assigning a value
 var address;
@@ -25,6 +25,6 @@ let streetName;
 // {
 //     let myVariable = 10;
 // }
-console.log("Middle name is:", middleName); // ReferenceError: myVariable is not defined
+console.log("Middle name is:", middleName);
 middleName = "Rami";
-console.log("Middle name is:", middleName); // ReferenceError: myVariable is not defined
+console.log("Middle name is:", middleName);

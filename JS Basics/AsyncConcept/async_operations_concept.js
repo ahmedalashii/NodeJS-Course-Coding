@@ -24,6 +24,8 @@
     ? Single-threading >> is a computer programming model in which the execution of multiple processes or threads occurs in a sequential manner.
     & JavaScript is a synchronous language, which means that code is executed line by line, one after the other.
     & JavaScript is a non-blocking language, which means that asynchronous actions don't block the execution of code.
+    & JavaScript is an asynchronous and concurrent programming language that offers a lot of flexibility. It's single-threaded like sync, but also non-blocking like async. 
+    & Although it's synchronous by nature, JavaScript benefits from asynchronous code.
     ~ It has two execustions: synchronous and asynchronous. >> Synchronous is blocking, and asynchronous is non-blocking.
     * Synchronous >> code is executed line by line, one after the other.
     * Asynchronous >> code is executed in a non-blocking way, so the execution of one task isn't dependent on another. >> Tasks can run simultaneously

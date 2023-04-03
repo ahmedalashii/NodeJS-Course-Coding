@@ -64,7 +64,7 @@ const productName = 'Coffee Star';
 
 const getCityByProductName = async (productName) => {
     try {
-        const product = await getProductByName(productName); // wheen await is preceded by a promise >> it will wait until the promise is resolved and get the result of then function and assign it to the variable
+        const product = await getProductByName(productName); // when await is preceded by a promise >> it will wait until the promise is resolved and get the result of then function and assign it to the variable
         console.log("Product is:", product);
         const store = await getStoreById(product.store_id);
         console.log("Store is:", store);

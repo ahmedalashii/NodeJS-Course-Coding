@@ -9,8 +9,8 @@ console.log("Sync Tax: ", computeTax(400, 10));
 
 // Async process:
 
-const callbackFunction = (tax) => {
-    console.log("Tax: ", computeTax(400, 40));
+const callbackFunction = () => {
+    console.log("Async Tax: ", computeTax(400, 40));
 };
 
 setTimeout(callbackFunction, 500);
