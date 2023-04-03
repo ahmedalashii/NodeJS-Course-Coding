@@ -13,7 +13,6 @@ const ecrypt = () => {
     });
 };
 
-
 ecrypt(); // this will take more time than hash1() because of the number of iterations. >> 10000 >> so it will be a pending callback.
 hash1();
 hash1();

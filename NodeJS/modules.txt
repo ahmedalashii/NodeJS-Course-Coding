@@ -1,0 +1,13 @@
+Module in Node.js is a simple or complex functionality organized in single or multiple JavaScript files which 
+can be reused throughout the Node.js application.
+Node.js also supports user-defined modules which are written by developers to extend the core functionality of Node.js. 
+Node.js has a large ecosystem of modules which simplifies the development of Node.js applications. 
+Node.js modules are loaded using the require function, and the exports object is used to expose modules.
+
+Module is package/library/componenet which has many functions and variables that's imported in js files in the nodejs application
+
+Modules:
+
+1- Core Modules (built-in modules) >> Node.js dependencies
+2- Local Modules (user-defined modules) >> my modules
+3- NPM Modules (3rd party modules) >> external modules
