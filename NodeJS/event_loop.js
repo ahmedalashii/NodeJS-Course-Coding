@@ -7,14 +7,14 @@ const { pbkdf2 } = require('crypto');
 const { createServer } = require('http');
 /*
     The curly braces {} in the code indicate object destructuring syntax.
-    It tells JavaScript to extract the pbkdf2 function from the crypto object and assign it to the variable pbkdf2.
+    It tells JavaScript to extract the pbkdf2 function from the crypto module and assign it to the variable pbkdf2.
 */
 const start = Date.now();
 const hash = () => {
     pbkdf2('password', '##', 10000, 1000, 'sha256', () => {
         console.log('Hash:', Date.now() - start);
     });
-    // pbkdf2 is a function that takes 6 arguments. >> It's an asynchronous function.
+    // pbkdf2 is an async function that takes 6 arguments. >> It's an asynchronous function.
     // 1st argument is the password.
     // 2nd argument is the salt. >> is a random string that is used to make the hash more secure. >> ## is a random string.
     // 3rd argument is the number of iterations. >> is the number of times the hash function is executed. >> 10000 is a good number.
@@ -51,7 +51,7 @@ listen();
     and so on to other hash() functions
 */
 
-// So, we have two places where we can run our code:
+// So, we have three places where we can run our code:
 // 1. Call Stack
 // 2. Event Loop
 // 3. Operating System (OS Delegation)
@@ -78,7 +78,7 @@ listen();
                     │  │     pending callbacks     │    2nd Priortity to be checked >> these are the callbacks that are deferred/postponed to the next loop iteration. >> they are still/waiting/processing/in-thread
                     │  └─────────────┬─────────────┘
                     │  ┌─────────────┴─────────────┐
-                    │  │       idle, prepare       │    >> these are only used internally.
+                    │  │       idle, prepare       │    >> only used internally.
                     │  └─────────────┬─────────────┘      ┌───────────────┐
                     │  ┌─────────────┴─────────────┐      │   incoming:   │
                     │  │           poll            │<─────┤  connections, │  3rd Priortity to be checked >> these are the callbacks that are ready to be executed. >> THEY ARE Done/Ready/Finished/Processed >> they are waiting for the event loop to pick them up to pass them to message queue and then to call stack.
@@ -102,7 +102,6 @@ listen();
     It [event loop] is made up of a number of phases (as illustrated above). Each phase contains (1) a call stack, and (2) a callback queue.
     The call stack is where code is executed (on a LIFO basis), while the callback queue is where code is scheduled (on a FIFO basis)
     for later placement in the call stack for execution.
-
 */
 // The first thing that happens when the event loop starts is that it checks the call stack to see if there are any functions waiting to be executed.
 // If there are, it executes them. If not, it checks the event queue to see if there are any functions waiting to be executed.

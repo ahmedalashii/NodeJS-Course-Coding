@@ -1,3 +1,5 @@
+// Sync process:
+
 const computeTax = (amount, taxPercent) => {
     const tax = (taxPercent / 100) * amount;
     return tax;

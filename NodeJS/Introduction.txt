@@ -41,4 +41,5 @@
 
 - Node.js Server:
    Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
+   http package is a package for creating a server and listening to requests and responses
    Declaring a server in Node.js is very simple. We just need to use the createServer() method of the HTTP module inside the Node.js application.

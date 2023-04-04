@@ -18,6 +18,9 @@
     ? What is a synchronous function?
     ~ A synchronous function is a function that is executed line by line, one after the other.
     ~ Synchronous functions are blocking, which means that the next line of code won't be executed until the current line of code has finished executing.
+    ? What is an asynchronous function?
+    ~ An asynchronous function is a function that is executed in a non-blocking way, so the execution of one task isn't dependent on another.
+    ~ Asynchronous functions are non-blocking, which means that the next line of code will be executed even if the current line of code hasn't finished executing.
 
     & JavaScript is a single-threaded language, which means that only one thing can happen at a time.
     ? Multithreading >> is a computer programming concept in which two or more parts of a program execute concurrently.
@@ -26,7 +29,7 @@
     & JavaScript is a non-blocking language, which means that asynchronous actions don't block the execution of code.
     & JavaScript is an asynchronous and concurrent programming language that offers a lot of flexibility. It's single-threaded like sync, but also non-blocking like async. 
     & Although it's synchronous by nature, JavaScript benefits from asynchronous code.
-    ~ It has two execustions: synchronous and asynchronous. >> Synchronous is blocking, and asynchronous is non-blocking.
+    ~ It has two executions: synchronous and asynchronous. >> Synchronous is blocking, and asynchronous is non-blocking.
     * Synchronous >> code is executed line by line, one after the other.
     * Asynchronous >> code is executed in a non-blocking way, so the execution of one task isn't dependent on another. >> Tasks can run simultaneously
 

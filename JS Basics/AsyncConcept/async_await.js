@@ -41,7 +41,7 @@ const getUSData = async () => {
 
 // Calling the async function as a promise (using .then() and .catch()): // any return inside the async function will be considered as a promise.
 getUSData().then(data => console.log("Data is:", data)).catch(error => console.log("Error is:", error));
-// So now we have two ways of handling an async function >> handling returned promise >> or handling the data inside the async function and don't return anything.
+// So now we have two ways of handling an async/await function >> handling returned promise >> or handling the data inside the async function and don't return anything.
 
 
 // This is the 3rd way of handling async functions and just to confirm, it doesn't yet mix with the Promise way .. When returned promise it still async/await way.
