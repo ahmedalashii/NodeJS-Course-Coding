@@ -1,9 +1,9 @@
-const products = require('./data/products.json'); // if the extension is .js, it is not necessary to specify it
+const products = require('./data/products.json');
 // This is import for a normal file not a module >> it's copying the content of the file to the variable
 // This copying is not an import of module >> it's a copy of the file content
 // There's an additional step to import a module >> export the module first using module.exports
 // Module has to be of extension .js
 
-const dbConfig = require('./config/database');
+const dbConfig = require('./config/database'); // if the extension is .js, it is not necessary to specify it
 
 console.log("Database config: ", dbConfig.host);

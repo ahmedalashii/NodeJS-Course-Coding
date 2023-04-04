@@ -3,7 +3,8 @@ const divisionOps = require('./division');
 
 module.exports = {
     sum: require('./sum'),
-    multiply, divisionOps, // ES6 syntax
+    multiply,
+    divisionOps, // ES6 syntax
     division: divisionOps.division,
     remainder: require('./division').remainder
 };

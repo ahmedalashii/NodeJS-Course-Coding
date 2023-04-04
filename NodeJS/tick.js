@@ -25,6 +25,17 @@ process.nextTick(() => { // is similar, but it runs the callback before any I/O 
 hash1();
 hash1();
 
+
+/*
+        process.nextTick() vs setImmediate():
+        process.nextTick() fires immediately on the same phase
+        setImmediate() fires on the following iteration or 'tick' of the event loop
+
+        In essence, the names should be swapped. process.nextTick() fires more
+        immediately than setImmediate()
+*/
+
+
 // Please look at microsoft whiteboard for the diagram of tick loop
 
 // Note: the priorities of the event loop is on the level of the event loop, not on the level of whole node.js application.

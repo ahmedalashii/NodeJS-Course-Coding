@@ -94,6 +94,9 @@ listen();
         process.nextTick() vs setImmediate():
         process.nextTick() fires immediately on the same phase
         setImmediate() fires on the following iteration or 'tick' of the event loop
+
+        In essence, the names should be swapped. process.nextTick() fires more
+        immediately than setImmediate()
 */
 
 /*

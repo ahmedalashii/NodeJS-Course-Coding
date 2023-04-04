@@ -12,10 +12,13 @@ const { sum, multiply } = require('./my_modules/math'); // import the sum and mu
 
 console.log('the sum is', math.sum(4, 8));
 console.log('the multiply is', math.multiply(4, 8));
+
 console.log('the sum is', sum(4, 8));
 console.log('the multiply is', multiply(4, 8));
+
 console.log("iMath.sum(4, 8) = ", iMath.sum(4, 8));
 console.log("iMath.divisionOps.division(4, 8) = ", iMath.divisionOps.division(4, 8));
 console.log("iMath.divisionOps.remainder(4, 8) = ", iMath.divisionOps.remainder(4, 8));
+// This is called exposing chain of modules or sequence exposure of modules
 console.log("iMath.division(4, 8) = ", iMath.division(4, 8));
 console.log("iMath.remainder(4, 8) = ", iMath.remainder(4, 8));
