@@ -37,8 +37,6 @@
    4- Libuv (Async execution =>> Async handler >> Multi-thread) >> It's a cross-platform asynchronous I/O library. It usually came with 4 threads.
    5- NPM (Node Package Manager) >> It's a package manager for the JavaScript programming language. >> Dependency manager like Composer in PHP.
 
-
-
 - Node.js Server:
    Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
    http package is a package for creating a server and listening to requests and responses

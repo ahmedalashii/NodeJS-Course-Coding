@@ -1,5 +1,5 @@
 const multiply = require('./multiply');
-const divisionOps = require('./division');
+const divisions = require('./division');
 
 module.exports = {
     sum: require('./sum'),
