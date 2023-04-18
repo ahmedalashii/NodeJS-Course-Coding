@@ -63,7 +63,7 @@ listen();
 /*
     Very simple and short way of Event Loop tick is:
     It is used by node internal mechanism where when set of requests on a queue is processed then tick is initiated which represents the completion of a task ..
-    It represent an iteration of event loop.
+    It represents an iteration of event loop.
 */
 
 
