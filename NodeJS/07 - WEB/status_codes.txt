@@ -2,8 +2,10 @@
 1- Informational responses (100–199):
 100 Continue
 101 Switching Protocols
-102 Processing (WebDAV)
+102 Processing (WebDAV) >> Ex: Payment processing
 103 Early Hints
+
+
 2- Successful responses (200–299):
     200 OK
     201 Created
@@ -15,6 +17,8 @@
 207 Multi-Status (WebDAV)
 208 Already Reported (WebDAV)
 226 IM Used
+
+
 3- Redirects (300–399):
 300 Multiple Choices
 301 Moved Permanently
@@ -25,6 +29,8 @@
 306 Switch Proxy
 307 Temporary Redirect
 308 Permanent Redirect
+
+
 4- Client errors (400–499):
     400 Bad Request
     401 Unauthorized
@@ -55,6 +61,8 @@
 429 Too Many Requests
 431 Request Header Fields Too Large
 451 Unavailable For Legal Reasons
+
+
 5- Server errors (500–599):
     500 Internal Server Error
     501 Not Implemented

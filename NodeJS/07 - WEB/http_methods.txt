@@ -1,0 +1,16 @@
+GET >> Select/Retrieve data
+POST >> Insert data
+PUT >> Update all data of an object/entity
+PATCH >> Update partial data of an object/entity
+DELETE >> Delete data
+
+Content Type of the request:
+1- form-data >> POST 
+2- form-data/multipart >> POST >> used with file upload
+3- www-url-encoded >> used with put >> it differs from form-data in the way it encodes the data
+
+Content Type of the response:
+1- application/json >> used with REST API
+2- text/html >> used with web pages
+3- text/plain >> used with text files
+4- application/xml >> used with XML files

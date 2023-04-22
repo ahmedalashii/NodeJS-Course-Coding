@@ -1,0 +1,58 @@
+JSON ARRAY STRUCTURE:
+[ ] //Empty JSON array
+
+[ 0, 1, 2, 3, 4, 5]
+
+[ “StringValue”, 10, 20.13, true, null ]
+
+[
+ {
+   “Name” : “Nested Object”
+ },
+ [ 10, 20, true, 40, “Nested Array” ]
+]
+
+JSON OBJECT:
+{
+  “Name” : “Object Name”
+}
+
+{
+  “Name” : “Object Name”,
+  “Value” : 10
+}
+
+{
+  “Name” : “Object Name”,
+  “Value” : 10,
+  “NestedObject” : {
+    “Name” : “Nested Object”
+  }
+}
+
+{
+  “Name” : “Object Name”,
+  “Value” : 10,
+  “NestedObject” : {
+    “Name” : “Nested Object”
+  },
+  “NestedArray” : [ 10, 20, true, 40, “Nested Array” ]
+}
+
+The json object is a key value pair. The key is a string and the value can be any of the json data types. 
+The json array is a list of json data types.
+The json key is only a string with double quotes.
+
+
+// IN javascript:
+const person = {
+  name: 'John',
+  age: 30,
+  hobbies: ['music', 'movies', 'sports'],
+  address: {
+    street: '50 main st',
+    city: 'Boston',
+    state: 'MA'
+  }
+}
+This is automatically converted to JSON when you send it to the server.

@@ -1,0 +1,15 @@
+HTTPS is a protocol that provides communication security over a computer network. In simple terms, it means that all data passed between your browser and the website you are visiting is encrypted. This means that if someone is trying to listen in on your communication, they won’t be able to understand it.
+
+
+When POST HTTP Method is more secure than GET?
+The GET method is used to retrieve information from the given server using a given URI. 
+Requests using GET should only retrieve data and should have no other effect on the data. 
+The POST method is used to send data to the server, for example, customer information, file upload, etc. using HTML forms.
+So, The POST HTTP Method is more secure if the data is sensitive and if the protocol used is HTTPS.
+
+
+
+What is the difference between HTTP and HTTPS?
+HTTPS is a protocol that provides communication security over a computer network. 
+In simple terms, it means that all data passed between your browser and the website you are visiting is encrypted.
+This means that if someone is trying to listen in on your communication, they won’t be able to understand it.
