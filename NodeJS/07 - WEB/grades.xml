@@ -1,0 +1,14 @@
+<!-- Write code of xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<grades>
+    <grade>
+        <course>JAVA</course>
+        <teacher>Ahmed</teacher>
+        <grade>98</grade>
+    </grade>
+    <grade>
+        <course>Data Structures</course>
+        <teacher>Khaled</teacher>
+        <grade>95</grade>
+    </grade>
+</grades>
