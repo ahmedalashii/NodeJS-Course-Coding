@@ -6,7 +6,7 @@ const dbConnection = (collection, cb) => {
     MongoClient.connect(_uri)
         .then(async (client) => {
             const db = client.db('nodejs-project');
-            const data = db.collection(collection);
+            const data = db.collection(collection); // This will return the collection object
             await cb(data);
             client.close(); // This is important to close the connection
         })

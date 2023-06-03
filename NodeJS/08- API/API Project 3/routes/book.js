@@ -4,5 +4,6 @@ const router = Router();
 
 router
     .get('/', bookController.getBooks)
-    .get('/:id', bookController.getBookByID)
+    .get('/:id', bookController.getBookByID);
+
 module.exports = router;
