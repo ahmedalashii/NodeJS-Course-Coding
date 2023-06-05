@@ -38,4 +38,4 @@ hash1();
 
 // Please look at microsoft whiteboard for the diagram of tick loop
 
-// Note: the priorities of the event loop is on the level of the event loop, not on the level of whole node.js application.
+// Note: the priorities of the event loop is on the level of one loop tick, not on the level of whole evet loop ..

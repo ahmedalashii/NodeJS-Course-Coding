@@ -15,12 +15,37 @@
 // };
 // asyncFunction();
 
+// const power = (val) => const result = val * val; >> This is en error because const can't be used in this way. >> remove const and it will work.
+// console.log(power(2));
 
+
+const fs = require('fs');
+
+// const getData = async () => {
+//     const data = fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population');
+//     return data;
+// }
+// getData().then(async (data) => {
+//     console.log("Data is 2:", await data.json());
+// }).catch(error => console.log(error));
+
+
+
+// const getData = async () => {
+//     const data = fs.readFileSync('./data/empty.json', 'utf8');
+//     // return data; // This will return a buffer >> not a json object
+//     return data; // This will return a json object
+// }
+
+// getData().then((data) => {
+//     // console.log("Data is 2:", JSON.parse(data));
+//     console.log("Data is 2:", data);
+// }).catch(error => console.log(error));
 
 
 // Async Process:
 const getUSData = async () => {
-    // ! All code inside the async function is considered as a synchronous code >> has to be blocking code.
+    // ! All code inside the async function is considered as (has to be) a synchronous code >> has to be blocking code.
     // Any async process in the async function has to be preceded by the await keyword. >> to make an async process blocking. It means = "await for response"
     const response = await fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population'); // fetch is considerd as an async process (I/O) operation
     if (response.status !== 200) {
@@ -37,7 +62,7 @@ const getUSData = async () => {
 // Calling the async function doesn't need to be preceded by the await keyword. If it's inside another async function, it has to be preceded by the await keyword.
 // const data = getUSData(); // ! we can't do this because it's an async function. It returns a promise.
 // const data = await getUSData(); // ! we can't do this until we call the async function inside another async function.
-// console.log(data); // Output: Promise { <pending> }
+// console.log(data); // or console.log(getData()); >> Output: Promise { <pending> }
 
 // Calling the async function as a promise (using .then() and .catch()): // any return inside the async function will be considered as a promise.
 getUSData().then(data => console.log("Data is:", data)).catch(error => console.log("Error is:", error));

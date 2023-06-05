@@ -22,6 +22,11 @@ const server = http.createServer();
 
 server.on('listening', () => { // the event listener runs asynchronously >> non-blocking
     console.log('Server is listening now ..');
-}); // two parameters: 1- event name, 2- event listener (callback function)
+}); // two parameters: 1- event name, 2- event handler (callback function)
 // It's preferred to declare the event listener before the event is raised.
-server.listen(3000);
+server.listen(3000); // Event emitter >> the event is raised here >> the event listener is above this line
+
+// or can be written as:
+// server.listen(3000, () => {
+//     console.log('Server is listening now ..');
+// });

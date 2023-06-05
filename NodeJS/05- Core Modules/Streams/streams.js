@@ -5,13 +5,13 @@
 // Streams are used in real-time applications
 // Streams are used in file uploads and downloads
 // Streams can be used when moving data from one file to another
-
+// Streams are used in video and audio streaming
 
 /*
     ~ Types of streams:
     ! 1- Readable streams: used to read data from a source
     ! 2- Writable streams: used to write data to a destination
-    ! 3- Duplex streams: used to read and write data from and to a source and a destination
+    ! 3- Duplex streams: used to read and write data from and to a source and a destination >> Socket is a duplex stream
     ! 4- Transform streams: used to modify or transform the data as it is being read or written
 
     We will take a look at Readable, Writable, and Duplex streams ..
@@ -20,7 +20,7 @@
 
 const { createReadStream, createWriteStream } = require('fs');
 // Readable stream
-const readStream = createReadStream('../data/story.text', { encoding: 'utf8' });
+const readStream = createReadStream('../data/story.text');
 const writeStream = createWriteStream('../data/output.text');
 
 //! The process of reading data and writing data is called piping >> we can pipe the data from the read stream to the write stream >> it's a parallel process

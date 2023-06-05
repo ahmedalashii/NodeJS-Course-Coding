@@ -1,14 +1,13 @@
 const fs = require('fs');
-const { json } = ('stream/consumers');
 
-const getProductByName = (name, callback) => {
+const getProductByName = async (name, callback) => {
     fs.readFile('./data/products.json', 'utf8', (error, data) => {
         if (error) {
-            callback(error, null);
+            await callback(error, null);
         } else {
             const json = JSON.parse(data);
             const product = json.find((product) => product.name === name);
-            callback(undefined, product);
+            await callback(undefined, product);
         }
     });
 };

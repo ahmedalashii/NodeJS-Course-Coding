@@ -43,7 +43,6 @@
 // 2- The second number is the minor version. It's the version that contains new features.
 // 3- The third number is the patch version. It's the version that contains bug fixes.
 
-
 // package.json file deals with our project as it is a package. It contains all the information about our project.
 
 {
@@ -92,3 +91,12 @@
 // 2- Add the start script to the scripts section. >> "start-test": "node index.js && npm test"
 // 3- Save the file.
 // 4- Run the npm start-test command.
+
+What's Express?
+Express.js is a popular web application framework for Node.js. 
+It provides a robust set of features and utilities that simplify the process of building web applications and APIs.
+Some key features include:
+1- Robust routing
+2- Middleware support
+3- Focus on high performance
+4- Error-handling 

@@ -43,15 +43,15 @@ const remove = (request, response, next) => {
     _id = new ObjectId(_id);
     Review.findById(_id)
         .then((result) => {
+            const reviewData = result.data;
 
-            if (!result.data && result.status == false) {
+            if (!reviewData && result.status == false) {
                 const error = createHttpError(404, 'Review not found!');
                 return next(error);
             }
-            const reviewData = result.data;
 
             if (reviewData._reviewer_id.toString() != request._reviewer_id.toString()) {
-                const error = createHttpError(403, 'You are not allowed to delete this review!');
+                const error = createHttpError(403, 'You are not allowed to delete this review!'); // 403: Forbidden
                 return next(error);
             }
             Review.remove(_id, (result) => {
@@ -62,8 +62,7 @@ const remove = (request, response, next) => {
                 Book.refreshAverageRating(reviewData._book_id);
                 return returnJson(response, 200, true, result.message, null);
             });
-        })
-        .catch((error) => {
+        }).catch((error) => {
             const err = createHttpError(500, error.message);
             return next(err);
         });

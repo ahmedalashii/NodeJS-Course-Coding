@@ -12,6 +12,14 @@ const { promisify } = require('util');
 //     }
 // });
 
+/*
+
+    pure synchronous functions are not promisifiable in order to avoid blockage
+    For a method to be promisifiable it needs to be already asynchronous, i.e. return immediately, and also use callbacks upon finish.
+    const promisifiedReadFile = promisify(readFileSync);
+    ! This is wrong because readFileSync is synchronous and doesn't use callbacks
+*/
+
 const promisifiedReadFile = promisify(readFile);
 
 promisifiedReadFile('./data/products.json', 'utf8').then((data) => {

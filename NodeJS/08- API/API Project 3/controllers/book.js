@@ -11,8 +11,8 @@ const getBooks = (request, response, next) => {
         return next(error);
     }
 
-    if (page <= 0) {
-        const error = createHttpError(400, 'Page should be positive number greater than zero');
+    if (page <= 0 || perPage <= 0) {
+        const error = createHttpError(400, 'Page and PerPage should be positive numbers greater than zero');
         return next(error);
     }
 
@@ -30,8 +30,8 @@ const getBooks = (request, response, next) => {
 
     dbConnection('books', async (collection) => {
         try {
-            const books = await collection.find({}).skip((page - 1) * perPage).limit(perPage).toArray();
-            const booksCount = await collection.countDocuments({});
+            const books = await collection.find().skip((page - 1) * perPage).limit(perPage).toArray();
+            const booksCount = await collection.countDocuments();
             const pageCount = Math.ceil(booksCount / perPage);
             return returnJson(response, 200, true, 'Books found', {
                 books: books,
@@ -39,7 +39,7 @@ const getBooks = (request, response, next) => {
                 total: booksCount,
                 currentPage: page,
                 perPage: perPage
-            });
+            })
         } catch (error) {
             const err = createHttpError(500, error.message);
             return next(err);
@@ -56,9 +56,7 @@ const getBookByID = (request, response, next) => {
     const _id = new ObjectId(request.params.id);
     dbConnection('books', async (collection) => {
         try {
-            // const book = await collection.findOne({ _id: _id }); // or:
-            const book = await collection.findOne({ _id });
-
+            const book = await collection.findOne({ _id }); // or: { _id: _id }
             if (!book) {
                 const error = createHttpError(404, 'Book not found');
                 return next(error);

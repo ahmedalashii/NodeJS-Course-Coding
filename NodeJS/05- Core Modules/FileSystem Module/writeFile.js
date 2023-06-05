@@ -21,7 +21,7 @@ const { open, writeFile } = require('fs');
 //     });
 // });
 
-open('../data/story.text', 'a', (error, fd) => { // a: append >> will append the new content to the existing file
+open('../data/story.text', 'a+', (error, fd) => { // a: append >> will append the new content to the existing file
     if (error) {
         console.log(error);
         return;
@@ -32,4 +32,4 @@ open('../data/story.text', 'a', (error, fd) => { // a: append >> will append the
         }
         console.log('File is appended');
     });
-}); 
+});

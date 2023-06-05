@@ -1,11 +1,12 @@
 const path = require('path');
+// console.log(__dirname); // this is the path from the root directory to the current directoy
+// console.log(__filename); // this is the path from the root directory to the current file
 
-
-console.log("File name: ", __filename);
+console.log("File name Dir: ", __filename);
 // Base file name (path_module.js) using path.basename()
-console.log("Base", path.basename(__filename));
+console.log("Base (Real File Name)", path.basename(__filename));
 // Directory name (Path) using path.dirname()
-console.log("Directory", path.dirname(__filename));
+console.log("Directory", path.dirname(__filename)); // equivalent to __dirname
 // File extension (.js) using path.extname()
 console.log("Extension", path.extname(__filename));
 // Create path object using path.parse()

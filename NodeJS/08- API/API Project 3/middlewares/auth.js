@@ -3,22 +3,25 @@ const createHttpError = require('http-errors');
 require('dotenv').config(); // This is to load the .env file variables into the process.env object
 const { ObjectId } = require('bson');
 
-
-const veriftToken = (request, response, next) => {
-    var token = request.headers.authorization; // Bearer Token
-    if (!token) {
-        const error = createHttpError(403, 'A token is required for authentication'); // 403 status code means forbidden
-        return next(error);
-    }
-    token.startsWith('Bearer ') ? token = token.slice(7, token.length).trimLeft() : null;
+const verifyToken = (request, response, next) => {
     try {
+        var token = request.headers.authorization; // Bearer Token
+        if (!token) {
+            // 403 Forbidden
+            const error = createHttpError(403, 'A token is required for authentication');
+            return next(error);
+        }
+        token.startsWith('Bearer ') ? token = token.slice(7, token.length).trimLeft() : null;
+
         const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
         request._user_id = decoded._id;
         request._reviewer_id = new ObjectId(decoded._reviewer_id);
         return next();
     } catch (error) {
-        return next(createHttpError(401, error.message || 'Invalid token'));
+        // 401 Unauthorized
+        const err = createHttpError(401, error.message || 'Invalid token');
+        return next(err);
     }
 };
 
-module.exports = veriftToken;
+module.exports = verifyToken;

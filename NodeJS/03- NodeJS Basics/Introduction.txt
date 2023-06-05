@@ -1,10 +1,9 @@
 - What's Node.js?
    1- Node.js is a JavaScript framework built on Chrome's V8 JavaScript engine. 
    2- Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. 
-   3- Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
+   3- Node.js' package manager, npm, is the largest ecosystem of open source libraries in the world.
    4- Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser.
-   5- Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side 
-      to produce dynamic web page content before the page is sent to the user's web browser.
+   5- Node.js achieves cross-platform support by providing a consistent API (Application Programming Interface) across different operating systems. This means that you can write Node.js applications using the same codebase and run them on different platforms without needing to make significant changes to the code.
    6- Node.js is a platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications.
    7- Node.js is single-threaded, non-blocking, asynchronous I/O model that makes it lightweight and efficient, perfect for data-intensive 
       real-time applications that run across distributed devices.
@@ -31,10 +30,10 @@
 
 - Node.js Dependencies:
    1- ECMAScript (ES) It's a standard that defines the core of JavaScript. Others: TypeScript, CoffeeScript, etc.
-                     Example of ES6: let, const, arrow functions, classes, etc.
+         Example of ES6: let, const, arrow functions, classes, etc.
    2- CommonJS Module >> CommonJS Module: It's specalized for importing and exporting modules in JavaScript.
-   3- V8 Engine (Sync execution) (Single-Thread => V8 Call Stack) >> It's a JavaScript engine that is used in Google Chrome and in Node.js (Code execution Manager => Runner).
-   4- Libuv (Async execution =>> Async handler >> Multi-thread) >> It's a cross-platform asynchronous I/O library. It usually came with 4 threads.
+   3- V8 Engine (Sync execution) (Single-Thread => V8 Call Stack >> C++) >> It's a JavaScript engine that is used in Google Chrome and in Node.js (Code execution Manager => Runner).
+   4- Libuv (Async execution =>> Async handler >> Multi-thread >> C) >> It's a cross-platform asynchronous I/O library. It usually came with 4 threads.
    5- NPM (Node Package Manager) >> It's a package manager for the JavaScript programming language. >> Dependency manager like Composer in PHP.
 
 - Node.js Server:

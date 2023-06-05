@@ -20,7 +20,7 @@ const cities = require('./data/cities.json');
 /*
     ! So,There're three ways of handling async functions in javascript:
     * 1- Callbacks >> call me back when you're done :)
-    * 2- Promises >> It's Like Future in dart
+    * 2- Promises
     * 3- Async/Await
 */
 
@@ -85,7 +85,7 @@ const getCityByName = (name, cb) => {
     setTimeout(() => {
         const city = cities.find((city) => city.name === name)
         cb(city);
-    }, 500);
+    }, 1500);
 };
 
 // Callback function:

@@ -26,7 +26,7 @@ const productName = 'Coffee Star';
 
 // The code above represents the normal (first) way of handling async operations .. 
 // So now instead of using callbacks >> We're going to use the 2nd way of handling async operations "Promise"
-// Promise is like Future in dart >> It's like an agreement (وعد) between the sync process and the async process.
+// It's like an agreement (وعد) between the sync process and the async process.
 // So that when the async process finished its work >> it (async) will return a result ..
 // So we're going to edit the functions above by removing the need of using callbacks:
 const getProductByName = (name) => {
@@ -37,10 +37,10 @@ const getProductByName = (name) => {
         const product = json.find((product) => product.name === name);
         // The promise is either achieved or not >> either resolved or rejected
         if (product) {
-            resolve(product);
+            return resolve(product);
         } else {
             const error = { message: "Product isn't found!" };
-            reject(error);
+            return reject(error);
         }
     });
 };
@@ -52,10 +52,10 @@ const getStoreById = (id) => {
         const json = JSON.parse(data);
         const store = json.find((store) => store.id === id);
         if (store) {
-            resolve(store);
+            return resolve(store);
         } else {
             const error = { message: "Store isn't found!" };
-            reject(error);
+            return reject(error);
         }
     });
 };
@@ -66,10 +66,10 @@ const getCityByName = (name) => {
         const json = JSON.parse(data);
         const city = json.find((city) => city.name === name);
         if (city) {
-            resolve(city);
+            return resolve(city);
         } else {
             const error = { message: "City isn't found!" };
-            reject(error);
+            return reject(error);
         }
     });
 };

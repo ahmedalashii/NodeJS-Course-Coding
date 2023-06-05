@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const getProductByName = async (productName, cb) => {
-    fs.readFile('./data/products.json', 'utf8', (error, data) => {
+     fs.readFile('./data/products.json', 'utf8', (error, data) => {
         if (error) {
             cb(error, null);
         } else {

@@ -43,7 +43,7 @@ routes(app);
 */
 
 app.use((request, response, next) => {
-    const error = createHttpError(404, 'Not Found');
+    const error = createHttpError(404, 'Endpoint Not Found');
     return next(error); // Which in turn will be handled by the global error handler middleware
 });
 

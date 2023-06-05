@@ -3,8 +3,8 @@
 // Relative path for the "fs" is relative to //! the current directory we run the code from
 // './' means the current directory
 // '../' means the parent directory
-// './' and '../' are called relative path
-// Example: './data/story.txt' means the story.txt file is in the data folder which is in the same directory as the current file
+// './' and '../' are called relative paths
+// Example: './data/story.txt' means the story.txt file is in the data folder which is in the same directory as the current file we run the code from
 // Absolute path is the path from the root directory to the file or module we want to import
 
 // const story = require('../data/story.text'); // Relative path for the require function is relative to the file, so wherever we run the code from, it will work

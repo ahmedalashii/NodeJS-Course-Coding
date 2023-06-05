@@ -10,13 +10,19 @@ class User {
     save(cb) {
         dbConnection('users', async (collection) => {
             try {
-                const hashedPassword = hashSync(this.userData.password, 10);
+                // const hashedPassword = hashSync(this.userData.password, 10);
+                const hashedPassword = await hash(this.userData.password, 10);
                 this.userData.password = hashedPassword;
-                await collection.insertOne(this.userData).then((result) => {
-                    cb({
-                        status: true,
-                        _user_id: result.insertedId,
-                    });
+                // await collection.insertOne(this.userData).then((result) => {
+                //     cb({
+                //         status: true,
+                //         _user_id: result.insertedId,
+                //     });
+                // });
+                const result = await collection.insertOne(this.userData);
+                cb({
+                    status: true,
+                    _user_id: result.insertedId,
                 });
             } catch (error) {
                 cb(
@@ -29,13 +35,12 @@ class User {
         });
     }
 
-
     isExist() {
         return new Promise((resolve, reject) => {
             dbConnection('users', async (collection) => {
                 try {
                     const user = await collection.findOne({
-                        '$or': [
+                        $or: [
                             { email: this.userData.email },
                             { username: this.userData.username }
                         ]
@@ -97,35 +102,27 @@ class User {
                     //     // projection: { username: 1, email: 1, password: 1, _id: 1 },
                     //     // }
                     // );
-                    // if (user) {
-                    //     const isMatch = compareSync(loginData.password, user.password);
-                    //     if (isMatch) {
-                    //         dbConnection('reviewers', async (relatedCollection) => {
-                    //             const reviewer = await relatedCollection.findOne({
-                    //                 _user_id: user._id,
-                    //             });
-                    //             if (reviewer) {
-                    //                 user.reviewer = reviewer;
-                    //             }
-                    //             user.password = undefined;
-                    //             return resolve(
-                    //                 {
-                    //                     status: true,
-                    //                     data: user,
-                    //                 }
-                    //             );
-                    //         });
-                    //     } else {
-                    //         return resolve({
-                    //             status: false,
-                    //             message: 'Login failed',
-                    //         });
-                    //     }
-                    // } else {
+                    // const isMatch = compareSync(loginData.password, user.password);
+                    // if (!user || !isMatch) {
                     //     return resolve({
                     //         status: false,
                     //         message: 'Login failed',
-                    //         statusCode: 401,
+                    //     });
+                    // } else if(user && isMatch){
+                    //     dbConnection('reviewers', async (relatedCollection) => {
+                    //         const reviewer = await relatedCollection.findOne({
+                    //             _user_id: user._id,
+                    //         });
+                    //         if (reviewer) {
+                    //             user.reviewer = reviewer;
+                    //         }
+                    //         user.password = undefined;
+                    //         return resolve(
+                    //             {
+                    //                 status: true,
+                    //                 data: user,
+                    //             }
+                    //         );
                     //     });
                     // }
 
@@ -178,8 +175,7 @@ class User {
                                 status: false,
                                 message: 'Login failed',
                             });
-                        }
-                        else if (isMatch) {
+                        } else if (isMatch && user) {
                             user.password = undefined;
                             return resolve({
                                 status: true,
@@ -202,8 +198,6 @@ class User {
             });
         });
     }
-
 }
-
 
 module.exports = User;

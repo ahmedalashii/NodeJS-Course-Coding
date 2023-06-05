@@ -80,10 +80,9 @@ const getCityByProductName = async (productName) => {
 
 // getCityByProductName(productName);
 
-// The way above is the way of handling promises by mixing both the async/await and promise.
+// The way above is the way of handling promises by mixing both the async/await and promise. >> It's like Chain of promises inside the async function
 
-
-const getCityByProductName2 = async (productName) => { // this function is the same as the function above but it is written in a different way >> It handles the promise using then catch normally without using await 
+const getCityByProductNamePromiseInAsync = async (productName) => { // this function is the same as the function above but it is written in a different way >> It handles the promise using then catch normally without using await 
     getProductByName(productName)
         .then((product) => {
             console.log("Product is:", product);
@@ -100,4 +99,4 @@ const getCityByProductName2 = async (productName) => { // this function is the s
         });
 };
 
-getCityByProductName2(productName);
+getCityByProductNamePromiseInAsync(productName);

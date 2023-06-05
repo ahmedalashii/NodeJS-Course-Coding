@@ -5,7 +5,7 @@ const cities = require('./data/cities.json');
 // Async processes:
 const getProductByName = (name, cb) => {
     setTimeout(() => {
-        const product = products.find((product) => product.name === name);
+        const product = products.find(product => product.name === name);
         if (product) {
             cb(undefined, product);
         } else {
